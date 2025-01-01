@@ -50,3 +50,27 @@ button:hover {
   font-size: 18px;
   margin: 0;
 }
+
+@media (min-width: 1200px) {
+  #quiz, #score {
+      max-width: 800px;
+  }
+
+  button {
+      font-size: 20px;
+      padding: 14px 28px;
+  }
+}
+
+@media (min-width: 1600px) {
+  #quiz, #score {
+      max-width: 1000px;
+  }
+
+  button {
+      font-size: 22px;
+      padding: 16px 32px;
+  }
+}
+
+
