@@ -62,6 +62,7 @@ shuffle(questions);
 
 let currentQuestion = 0;
 let score = 0;
+let remainingScore = 0;
 
 
 function loadQuestions() {
@@ -87,7 +88,9 @@ function checkQuestion(selected) {
 
   if (selected === questions[currentQuestion].answer) {
     score++;
-  } 
+  } else  if (selected !== questions[currentQuestion].answer) {
+    remainingScore++;
+  }
 
   currentQuestion++;
 
@@ -103,6 +106,10 @@ function showScore() {
   document.getElementById('quiz').style.display = 'none';
   document.getElementById('score').style.display = 'block';
   document.getElementById('scoreValue').textContent = score;
+    document.getElementById('scoreValue').textContent = `Correct Answer: ${score}`;
+  document.getElementById('scoreValue').style.display = 'block';
+  document.getElementById("remainValue").textContent = `Uncorrect Answer: ${remainingScore}`;
+
 }
 
 loadQuestions();
